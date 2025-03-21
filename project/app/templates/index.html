@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- aos css-->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <!-- aos js -->
@@ -14,34 +16,36 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </head>
 <style>
+    body{
+      overflow-x: hidden;
+    }
     .nav{
         display: flex;
         justify-content: space-between;
-        background-color: black;
-        color: white;
+        background: linear-gradient(rgb(160, 135, 235),white);
+        color: rgb(0, 0, 0);
         padding: 30px;
-    }
-    .nav_section{
     }
     ul{
        display: flex;
-       width: 600px;
+       width: 700px;
        list-style: none;
        padding: 20px;
        justify-content: space-around;
     }
     ul li a{
         text-decoration: none;
-        color: white;
+        color: rgb(0, 0, 0);
         padding: 20px;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: 14px;
+        font-family:Verdana, Geneva, Tahoma, sans-serif;
     }
     ul li a:hover{
         background: rgba(255, 0, 0, 0.582);
         transition: 1s;
     }
     .logo{
-        color: white;
+        color: rgba(255, 0, 0, 0.582);
         font-size: 30px;
         padding: 20px;
         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -49,32 +53,57 @@
 </style>
 <body>
     <div class="nav">
-        <a class="logo" data-aos="fade-up" data-aos-anchor-placement="center-center">Courier</a>
+        <a class="logo" data-aos="fade-up" data-aos-anchor-placement="center-center">Courier &emsp;<i class="fa-solid fa-truck fa-bounce" style="color: rgba(255, 0, 0, 0.582)"></i></a>
         <nav class="nav_section">
             <ul>
                 <li data-aos="fade-up" data-aos-anchor-placement="center-center"><a href="">Services</a></li>
                 <li data-aos="fade-up" data-aos-anchor-placement="center-center"><a href="">Solution</a></li>
                 <li data-aos="fade-up" data-aos-anchor-placement="center-center"><a href="">About Us</a></li>
                 <li data-aos="fade-up" data-aos-anchor-placement="center-center"><a href="">Support</a></li>
+                <li data-aos="fade-up" data-aos-anchor-placement="center-center"><a href="{% url 'registeration' %}">Registeration</a></li>
+                <li data-aos="fade-up" data-aos-anchor-placement="center-center"><a href="{% url 'login' %}">Login</a></li>
             </ul>
         </nav>
     </div>
-
-    <div class="row">
-        <div class="col-sm-6 p-5">
+    <div class="row ">
+        <div class="col-sm-6 p-5" >
             <p class="display-1" data-aos="fade-right"
             data-aos-anchor="#example-anchor"
             data-aos-offset="500"
-            data-aos-duration="500">Delivering <span class="fw-bold" style="color: rgba(36, 105, 233, 0.705);" >Speed</span> <span class="">&</span> <span  class="fw-bold" style="color: rgba(36, 105, 233, 0.705);">Security</span> at <span >Your</span> Doorstep</p>
+            data-aos-duration="500">Delivering <span class="" style="color: purple;;font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif" >Speed</span> <span class="">&</span> <span  class="" style="color: purple;font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif"">Security</span> at <span >Your</span> Doorstep</p>
         </div>
-        <div class="col-sm-6" style="background: black;" data-aos="fade-left"
+        <div class="col-sm-6"  data-aos="fade-left"
         data-aos-anchor="#example-anchor"
         data-aos-offset="500"
         data-aos-duration="500">
-            <img class="col-sm-12" src="{% static 'images/one.png' %}" alt="Courier Service"  >
+            <img class="col-sm-12 " src="{% static 'images/one.png' %}" alt="Courier Service"  >
         </div>
     </div>
-
+    <br>
+    <br>
+    <Br>
+    <p class="display-1 text-center" data-aos="fade-up-left">We are more than <br><span data-aos="fade-up-left" style="color: purple;font-family:'Times New Roman', Times, serif">just a shipping partner</span></p>
+    <div class="row">
+        <div class="col-sm-6">
+            <img class="col-sm-12 fa-fade" src="{% static 'images/two.png' %}" alt="">
+        </div>
+        <div class="col-sm-6">
+            <br>
+            <br>
+            <br>
+            <br>
+            <p data-aos="fade-left"
+            data-aos-anchor="#example-anchor"
+            data-aos-offset="500"
+            data-aos-duration="500"><b>We are India's largest</b> <br><br> <span style="margin-left: 40px;background:rgba(255, 0, 0, 0.582);padding:10px;color:white;font-size:900">Express Parcel player</span></p>
+            <hr>
+            <p style="line-height: 40px;"data-aos="fade-left"
+            data-aos-anchor="#example-anchor"
+            data-aos-offset="1000"
+            data-aos-duration="1000">Delhivery’s infrastructure and technology power our Express parcel service that caters to eCommerce marketplaces, D2C brands, omnichannel retailers, small and medium industries, large enterprises and consumers.
+            With Industry leading TATs and service level adherence, we ensure that your shipments reach more than 99.5% of India's population reliably and effectively.</p>
+        </div>
+    </div>
 <!-- aos script -->
     <script>
         AOS.init();

@@ -17,6 +17,14 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     BASE_DIR / "static",  
 ]
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static')
+]
+import os
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-%sqt@(eeil=_%gw-)l-65uohjoo@nb@$hx*-s*)xi13)qg7l04'
 
