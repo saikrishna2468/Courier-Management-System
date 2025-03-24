@@ -13,6 +13,9 @@ import os
 from pathlib import Path
 import dj_database_url
 import os
+DATABASES = {
+    'default': dj_database_url.config(default=os.getenv('DATABASE_URL'))
+}
 BASE_DIR = Path(__file__).resolve().parent.parent
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
@@ -84,10 +87,17 @@ WSGI_APPLICATION = 'project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
-
 DATABASES = {
-    'default': dj_database_url.config(default=os.getenv('DATABASE_URL'))
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'courier_db',  # Replace with your database name
+        'USER': 'postgres',  # Replace with your PostgreSQL username
+        'PASSWORD': 'S@i369krishn@',  # Replace with your PostgreSQL password
+        'HOST': 'localhost',  # Keep localhost if running locally
+        'PORT': '5432',  # Default PostgreSQL port
+    }
 }
+
 
 
 
