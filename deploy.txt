@@ -1,0 +1,51 @@
+import os
+from pathlib import Path
+import dj_database_url
+import os
+DATABASES = {
+    
+    'default': dj_database_url.config(default=os.getenv('DATABASE_URL'))
+    
+}
+BASE_DIR = Path(__file__).resolve().parent.parent
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    BASE_DIR / "static",  
+]
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static')
+]
+import os
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_URL = '/static/'
+=============================================need to add in the setting.py file===========================
+need to add requirements.txt in the main folder===
+===>pip freeze > requirements.txt
+====>need to install Render requires dj-database-url to properly parse the DATABASE_URL.
+
+🔹 Run this command to install it:
+pip install dj-database-url
+=============================================================================================
+and create a Procfile main folder===
+============================================================================================
+need to add in the render envirolment==
+secure_key==>also
+DATABASE_URL=postgresql://courier_db_user:5D8Iv8pbD7NxnpOhuoVadrtH2rm43uE6@dpg-cvgkit2qgecs739g9ueg-a/courier_db
+================================================================================================================
+need to create a database in the render those password and details need to change in the setting.py also
+================================================================================================================
+Build Command===
+pip install -r ../requirements.txt && python manage.py migrate
+==============================================================
+Pre-Deploy Command 
+project name==========
+=================================
+Start Command
+gunicorn project.wsgi:application
+=================================
+need to create postgresql in render
+=====================================
+
