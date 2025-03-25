@@ -4,23 +4,107 @@
     {% load static %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registration</title>
+    <title>Register</title>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" crossorigin="anonymous">
     <!-- AOS CSS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <style>
+        /* Background with gradient */
+        body {
+            background: linear-gradient(to right, #141e30, #243b55);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Glassmorphism Card */
+        .reg {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 10px;
+            padding: 30px;
+            max-width: 400px;
+            width: 100%;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        /* Inputs */
+        .form-control {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: none;
+            border-bottom: 2px solid #00c6ff;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .form-control:focus {
+            background: rgba(255, 255, 255, 0.2);
+            outline: none;
+            box-shadow: none;
+            border-bottom: 2px solid #ff416c;
+        }
+
+        /* Sparkling Animation */
+        .sparkle {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .sparkle::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 10%, rgba(255, 255, 255, 0) 70%);
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .sparkle:hover::before {
+            opacity: 1;
+            animation: sparkle-animation 1.5s linear infinite;
+        }
+
+        @keyframes sparkle-animation {
+            0% {
+                transform: translateX(-50%) translateY(-50%) rotate(0deg);
+            }
+            100% {
+                transform: translateX(-50%) translateY(-50%) rotate(360deg);
+            }
+        }
+
+        /* Button */
+        .btn-primary {
+            background: linear-gradient(to right, #00c6ff, #0072ff);
+            border: none;
+            padding: 12px;
+            font-weight: bold;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .btn-primary:hover {
+            background: linear-gradient(to right, #ff416c, #ff4b2b);
+            transform: scale(1.05);
+        }
+
+    </style>
 </head>
-
 <body>
-
-    <!-- Include Navbar -->
-    {% include 'navbar.html' %}
-
-    <!-- Registration Content -->
-    <div class="container my-5">
-        <h2 class="text-center">Register Here</h2>
+ <!-- Include Navbar -->
+ {% include 'navbar.html' %}
+    <div class="container reg my-5" data-aos="fade-up">
+        <h2 class="text-center mb-4">Register Here</h2>
         <form>
             <div class="mb-3">
                 <label class="form-label">Username</label>
@@ -34,7 +118,7 @@
                 <label class="form-label">Password</label>
                 <input type="password" class="form-control" required>
             </div>
-            <button type="submit" class="btn btn-primary w-100">Register</button>
+            <button type="submit" class="btn btn-primary w-100 sparkle">Register</button>
         </form>
     </div>
 
