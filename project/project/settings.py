@@ -14,7 +14,9 @@ from pathlib import Path
 import dj_database_url
 import os
 DATABASES = {
+    
     'default': dj_database_url.config(default=os.getenv('DATABASE_URL'))
+    
 }
 BASE_DIR = Path(__file__).resolve().parent.parent
 STATIC_URL = '/static/'
@@ -91,9 +93,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'courier_db',  # Replace with your database name
-        'USER': 'postgres',  # Replace with your PostgreSQL username
-        'PASSWORD': 'S@i369krishn@',  # Replace with your PostgreSQL password
-        'HOST': 'localhost',  # Keep localhost if running locally
+        'USER': 'courier_db_user',  # Replace with your PostgreSQL username
+        'PASSWORD': '5D8Iv8pbD7NxnpOhuoVadrtH2rm43uE6',  # Replace with your PostgreSQL password
+        'HOST': 'dpg-cvgkit2qgecs739g9ueg-a',  # Keep localhost if running locally
         'PORT': '5432',  # Default PostgreSQL port
     }
 }
