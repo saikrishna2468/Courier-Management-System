@@ -48,4 +48,4 @@ gunicorn project.wsgi:application
 =================================
 need to create postgresql in render
 =====================================
-
+ALLOWED_HOSTS = ['*']
